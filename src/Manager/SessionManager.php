@@ -34,7 +34,7 @@ final class SessionManager implements SessionManagerInterface
     /**
      * {@inheritdoc}
      */
-    public function getSessionData(bool $checkExists = true): ?array
+    public function getSessionData(bool $checkExists = true)
     {
         if ($checkExists) {
             $manager = Container::getDefaultManager();
@@ -103,7 +103,7 @@ final class SessionManager implements SessionManagerInterface
     /**
      * Set/Unset session data.
      */
-    private function setUnset(Container $container, string $keysession, ?string $value, bool $set = false): bool
+    private function setUnset(Container $container, string $keysession, $value, bool $set = false): bool
     {
         if (!$container->offsetExists($keysession)) {
             return false;
